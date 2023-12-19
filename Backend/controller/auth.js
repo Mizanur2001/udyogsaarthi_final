@@ -155,6 +155,8 @@ const auth = () => {
                     password: hasspass,
                 })
 
+                await otpModel.deleteOne({ email })
+
                 userData.save().then(() => {
                     res.status(200).send({
                         status: 200,
