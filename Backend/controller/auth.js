@@ -138,7 +138,7 @@ const auth = () => {
                     })
                 }
 
-                if (ServerOTP.otp == otp) {
+                if (ServerOTP.otp != otp) {
                     return res.send({
                         status: 403,
                         message: "Invalid OTP"
