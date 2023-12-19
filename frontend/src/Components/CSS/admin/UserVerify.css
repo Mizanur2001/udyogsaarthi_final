@@ -1,0 +1,179 @@
+.UserVerifyCont {
+    height: 100vh;
+    display: flex;
+}
+
+.UserVerifyCont .verificationPanelCont {
+    height: 100vh;
+    width: 80%;
+}
+
+.UserVerifyCont .verificationPanelCont .header {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.UserVerifyCont .verificationPanelCont .header p {
+    color: #242A35;
+    font-size: 24px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 200;
+    line-height: 36px;
+    margin-left: 60px;
+    margin-bottom: 24px;
+}
+
+.UserVerifyCont .verificationPanelCont .body {
+    background: #F5F7FA;
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+
+.UserVerifyCont .verificationPanelCont .timeLine ul {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    align-items: center;
+    height: 63px;
+}
+
+.UserVerifyCont .verificationPanelCont .timeLine ul li {
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+.UserVerifyCont .verificationPanelCont .timeLine ul .active {
+    color: #008A3B;
+    padding: 20px 5px;
+    border-bottom: 3px solid #008A3B;
+    background: #F5F7FA;
+}
+
+.UserVerifyCont .verificationPanelCont .userStatusCont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+}
+
+.UserVerifyCont .verificationPanelCont .userStatusBox {
+    display: flex;
+    width: 236px;
+    height: 114px;
+    padding: 16px 13px 18px 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #FFF;
+    box-shadow: 0px 2px 6px 0px rgba(71, 88, 114, 0.10);
+    cursor: pointer;
+}
+
+.UserVerifyCont .verificationPanelCont .userStatusBox p:nth-child(1) {
+    color: #8494A5;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+
+.UserVerifyCont .verificationPanelCont .userStatusBox p:nth-child(2) {
+    color: #8494A5;
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0;
+}
+
+
+.UserVerifyCont .verificationPanelCont .userStatusBox p:nth-child(3) {
+    color: #8494A5;
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    margin: 0;
+}
+
+.UserVerifyCont .verificationPanelCont .pendingUser {
+    background: #E3A410;
+}
+
+.UserVerifyCont .verificationPanelCont .pendingUser p:nth-child(1) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .pendingUser p:nth-child(2) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .pendingUser p:nth-child(3) {
+    color: #FFF;
+}
+
+
+.UserVerifyCont .verificationPanelCont .approvedUser {
+    background: #008A3B;
+}
+
+.UserVerifyCont .verificationPanelCont .approvedUser p:nth-child(1) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .approvedUser p:nth-child(2) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .approvedUser p:nth-child(3) {
+    color: #FFF;
+}
+
+
+.UserVerifyCont .verificationPanelCont .rejectedUser {
+    background: #EA0000;
+}
+
+.UserVerifyCont .verificationPanelCont .rejectedUser p:nth-child(1) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .rejectedUser p:nth-child(2) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .rejectedUser p:nth-child(3) {
+    color: #FFF;
+}
+
+
+.UserVerifyCont .verificationPanelCont .totalUser {
+    background: #0069EC;
+}
+
+.UserVerifyCont .verificationPanelCont .totalUser p:nth-child(1) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .totalUser p:nth-child(2) {
+    color: #FFF;
+}
+
+.UserVerifyCont .verificationPanelCont .totalUser p:nth-child(3) {
+    color: #FFF;
+}
+
+@media(max-width:1450px) {
+    .UserVerifyCont .verificationPanelCont .userStatusBox {
+        height: 99px;
+        width: 170px;
+    }
+}

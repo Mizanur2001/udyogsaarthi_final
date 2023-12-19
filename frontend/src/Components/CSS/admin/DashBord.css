@@ -1,0 +1,154 @@
+.dashBordCont {
+    height: auto;
+    width: 20%;
+    border-right: 0.4px solid #9a9a9a;
+}
+
+.dashBordCont .logoCont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashBordCont .LogoLowerCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    /* border: 2px solid; */
+}
+
+.dashBordCont .logoCont hr {
+    width: 99.5%;
+}
+
+.dashBordCont .logoCont img {
+    width: 123px;
+    height: 36px;
+    flex-shrink: 0;
+    margin: 20px 0px;
+}
+
+.dashBordCont .allIconWrapper {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+.dashBordCont .allIconWrapper a {
+    text-decoration: none;
+    color: #627293;
+}
+
+.dashBordCont .allIconWrapper .iconCont {
+    display: flex;
+    padding: 11px 0px 11px 39px;
+    align-items: center;
+    gap: 15px;
+    width: 84%;
+    height: 42px;
+    cursor: pointer;
+}
+
+@media(min-width:1350px) {
+    .dashBordCont .allIconWrapper .iconCont {
+        width: 85%;
+    }
+}
+
+@media(min-width:1450px) {
+    .dashBordCont .allIconWrapper .iconCont {
+        width: 86%;
+    }
+}
+
+@media(min-width:1550px) {
+    .dashBordCont .allIconWrapper .iconCont {
+        width: 87%;
+    }
+}
+
+@media(min-width:1650px) {
+    .dashBordCont .allIconWrapper .iconCont {
+        width: 88%;
+    }
+}
+
+@media(min-width:1750px) {
+    .dashBordCont .allIconWrapper .iconCont {
+        width: 89.5%;
+    }
+}
+
+.dashBordCont .allIconWrapper a .iconCont img {
+    width: 30px;
+    height: 30px;
+}
+
+
+.dashBordCont .allIconWrapper a:nth-child(1) img {
+    width: 20px;
+    height: 20px;
+}
+
+
+.dashBordCont .allIconWrapper a:nth-child(4) img {
+    margin-left: 5px;
+}
+
+.dashBordCont .adminInfoCont .adminEmailCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    /* margin-top: 20px; */
+
+}
+
+.dashBordCont .adminInfoCont .adminEmailCont h4 {
+    margin-left: 10px;
+    padding-right: 30px;
+    color: #394455;
+    font-size: 16px;
+    font-family: 'Mulish';
+    font-weight: 700;
+
+}
+
+.dashBordCont .adminInfoCont p {
+    text-align: center;
+    margin: 0px;
+    color: #627293;
+    font-size: 15px;
+    font-family: 'Mulish';
+    font-weight: 200;
+}
+
+
+.dashBordCont .adminInfoCont span {
+    font-weight: bold;
+}
+
+.active {
+    font-weight: 600;
+    color: #394455;
+    font-size: 14px;
+    background: #F3F3F3;
+}
+
+.dashBordCont .adminInfoCont .adminInfoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.dashBordCont .adminInfoCont .logoutBtnCont img {
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.dashBordCont .adminInfoCont .logoutBtnCont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
