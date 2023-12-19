@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+.VerifyCont {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.VerifyCont .optVerifyCont {
+    height: 450px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.VerifyCont .optVerifyCont .head h2 {
+    color: #171717;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 36px;
+    margin: 0px;
+    margin-bottom: 15px;
+}
+
+.VerifyCont .optVerifyCont .head p {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+}
+
+.VerifyCont .optVerifyCont .form p {
+    text-align: center;
+    color: #525252;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.VerifyCont .optVerifyCont .form button {
+    display: flex;
+    width: 335px;
+    height: 48px;
+    padding: 15px 0px 16px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #008A3B;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.VerifyCont .logo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.VerifyCont .logo div:nth-child(1) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(180deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.VerifyCont .logo div:nth-child(3) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(0deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.VerifyCont .logo img {
+    margin: 9px -15px;
+    width: 80%;
+}

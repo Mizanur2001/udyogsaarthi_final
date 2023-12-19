@@ -12,7 +12,7 @@ const Auth = () => {
     const nevigate = useNavigate()
     const URL = process.env.REACT_APP_BACKEND_URL
     const [activeLogin, setActiveLogin] = useState(true)
-    const [inputVal, setInputVal] = useState({ name: "", email: "", phone: "", year: "", password: "", cpassword: "" })
+    const [inputVal, setInputVal] = useState({ name: "", email: "", phone: "", password: "", cpassword: "" })
     const [inputValLogin, setInputvalLogin] = useState({ email: "", password: "" })
     const [btnDisable, setBtnDisable] = useState(true)
     const [showPass, setShowPass] = useState(false)
@@ -24,11 +24,14 @@ const Auth = () => {
     const funcSignUp = (e) => {
         e.preventDefault()
         axios.post(`${URL}/signup`, inputVal).then((response) => {
-            if (response.data === 'Data Saved Sucessfully') {
-                nevigate('/pending')
+            if (response.data.status === 400 || response.data.status === 403 || response.data.status === 500) {
+                toast.error(response.data.message)
+                return;
             }
+            localStorage.setItem("userInfo", JSON.stringify(inputVal))
+            nevigate('/verify')
         }).catch(err => {
-            toast.error(err.response.data)
+            console.log(err)
         })
     }
 
