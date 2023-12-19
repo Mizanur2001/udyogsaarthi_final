@@ -80,7 +80,7 @@ const auth = () => {
                     })
                 }
 
-                if (email == '' || name == '' || year == '' || phone == '' || password == '' || cpassword == '') {
+                if (email == '' || name == '' || phone == '' || password == '' || cpassword == '') {
                     return res.send({
                         status: 403,
                         message: "All Field Required"
