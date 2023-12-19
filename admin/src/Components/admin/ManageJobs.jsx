@@ -93,7 +93,7 @@ const UsersAdmin = () => {
         <div className='UsersAdmin'>
             <ToastContainer />
             <DashBord />
-            <EditModal setOpenModel={setOpenModel} openModel={openModel} id={id} />
+            <EditModal setOpenModel={setOpenModel} openModel={openModel} id={id} fetchJobs={fetchJobs} />
             {/* Your Dashboard component */}
             <div className="userAdminPanel">
                 <div className="header">

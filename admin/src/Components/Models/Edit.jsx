@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 
 
-const Edit = ({ openModel, setOpenModel, id }) => {
+const Edit = ({ openModel, setOpenModel, id, fetchJobs }) => {
     const URL = 'https://f087-125-17-180-42.ngrok-free.app'
     const theme = useMantineTheme();
     const [inputVal, setInputVal] = useState({
@@ -46,6 +46,7 @@ const Edit = ({ openModel, setOpenModel, id }) => {
         axios.put(`${URL}/jobs/${id}/`, inputVal).then((response) => {
             toast.success("Data Updated successfully")
             setOpenModel(false)
+            fetchJobs()
         }).catch(err => {
             console.log(err)
         })
