@@ -155,11 +155,25 @@ const auth = () => {
                     password: hasspass,
                 })
 
+                const Data = {
+                    id: userData._id,
+                    name: userData.name,
+                    email: userData.email,
+                    phone: userData.phone,
+                }
+
+
+                const Jwt_sign = jwt.sign(Data, process.env.SECTRE_KEY)
+
                 await otpModel.deleteOne({ email })
 
                 userData.save().then(() => {
                     res.status(200).send({
                         status: 200,
+                        data: {
+                            userInfo: Data,
+                            jwtToken: Jwt_sign
+                        },
                         message: "User Created Sucessfully"
                     });
                 }).catch(err => {
