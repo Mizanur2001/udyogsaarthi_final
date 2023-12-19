@@ -164,7 +164,8 @@ Login System
 }
 
 .Container .signinContainer .logo img {
-    margin: 20px 0px;
+    margin: 13px -18px;
+    width: 80%;
 }
 
 /*
@@ -238,7 +239,7 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
 }
 
-.mt-10{
+.mt-10 {
     margin-top: 10px;
 }
 
@@ -284,7 +285,8 @@ input::-webkit-inner-spin-button {
 }
 
 .Container .signupContainer .logo img {
-    margin: 10px 0px;
+    margin: 8px -21px;
+    width: 80%;
 }
 
 .Container .signupContainer .logo div:nth-child(1) {
