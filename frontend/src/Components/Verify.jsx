@@ -5,10 +5,8 @@ import OtpInput from 'react-otp-input'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
 const Verify = () => {
-    const nevigate = useNavigate()
     const [otp, setOtp] = useState('');
     const [userInfos, setUserinfos] = useState({
         name: '',
@@ -39,7 +37,8 @@ const Verify = () => {
                 toast.error(response.data.message)
                 return;
             }
-            nevigate('/')
+            localStorage.setItem('userToken', response.data.data.jwtToken)
+            window.location.reload()
         }).catch(err => {
             toast.error(err)
         })

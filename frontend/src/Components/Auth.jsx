@@ -41,14 +41,15 @@ const Auth = () => {
 
     const funcLogin = () => {
         axios.post(`${URL}/login`, inputValLogin).then((response) => {
-            const Data = response.data
-            if (Data === 'not approved') {
-                nevigate('/pending')
-            } else {
-                localStorage.setItem('userInfo', response.data)
-                nevigate('/search')
-                window.location.reload()
+
+            if (response.data.status === 400 || response.data.status === 403 || response.data.status === 500) {
+                toast.error(response.data.message)
+                return;
             }
+            
+            localStorage.setItem('userToken', response.data.data.jwtToken)
+            window.location.reload()
+
         }).catch(err => {
             toast.error(err.response.data)
         })
