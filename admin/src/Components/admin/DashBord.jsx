@@ -36,7 +36,7 @@ const DashBord = () => {
                             <p>Dashbord</p>
                         </div>
                     </Link>
-                    {(localStorage.getItem('adminType') === 'userAdmin' || localStorage.getItem('adminType') === 'superAdmin') &&
+                    {
                         <Link to='/admin/userverify'>
                             <div className={`iconCont ${location.pathname === '/admin/userverify' ? 'active' : ''}`}>
                                 <img src={location.pathname === '/admin/userverify' ? activeUserManage : userManagement} alt="userManagement" />
@@ -44,7 +44,7 @@ const DashBord = () => {
                             </div>
                         </Link>
                     }
-                    {localStorage.getItem('adminType') === 'superAdmin' &&
+                    {
                         <Link to='/admin/useradmin'>
                             <div className={`iconCont ${location.pathname === '/admin/useradmin' ? 'active' : ''}`}>
                                 <img src={location.pathname === '/admin/useradmin' ? activeAdmin : admin} alt="Admin" />
@@ -77,7 +77,7 @@ const DashBord = () => {
                         </div>
                     </div>
                     <div className="logoutBtnCont">
-                        <img src={powerBtn} alt="PowerOff" onClick={funcLogout}/>
+                        <img src={powerBtn} alt="PowerOff" onClick={funcLogout} />
                     </div>
                 </div>
             </div>

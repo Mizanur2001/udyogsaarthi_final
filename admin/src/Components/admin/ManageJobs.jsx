@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import DashBord from './DashBord';
 import axios from 'axios'
 import '../CSS/style.css'
+import EditModal from '../Models/Edit'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UsersAdmin = () => {
-    const BaseURL = 'https://1d57-125-17-180-42.ngrok-free.app'
+    const BaseURL = 'https://f087-125-17-180-42.ngrok-free.app'
     const [jobs, setJobs] = useState([]);
+    const [openModel, setOpenModel] = useState(false)
+    const [id, setId] = useState()
     const [formData, setFormData] = useState({
         title: '',
         description: '',
@@ -18,6 +21,8 @@ const UsersAdmin = () => {
         application_deadline: ''
     });
 
+
+
     const fetchJobs = async () => {
         axios.get(`${BaseURL}/jobs`).then((response) => {
             setJobs(response.data)
@@ -27,9 +32,18 @@ const UsersAdmin = () => {
     };
 
     const createJob = async () => {
-        console.log(formData)
         axios.post(`${BaseURL}/jobs/`, formData).then((response) => {
-            console.log(response)
+            setFormData({
+                title: '',
+                description: '',
+                location: '',
+                company: '',
+                salary_min: "",
+                salary_max: "",
+                application_deadline: ''
+            });
+            toast.success("Job Added Successfully")
+            fetchJobs();
         }).catch(err => {
             if (err.response && err.response.data) {
                 const errorData = err.response.data;
@@ -46,7 +60,12 @@ const UsersAdmin = () => {
     };
 
     const deleteJob = async (jobId) => {
-        // Logic to delete a job by making a DELETE request to the API
+        axios.delete(`${BaseURL}/jobs/${jobId}`).then((response) => {
+            toast.success('Deleted Successfully')
+            fetchJobs();
+        }).catch(err => {
+            console.log(err)
+        })
     };
 
 
@@ -74,6 +93,7 @@ const UsersAdmin = () => {
         <div className='UsersAdmin'>
             <ToastContainer />
             <DashBord />
+            <EditModal setOpenModel={setOpenModel} openModel={openModel} id={id} />
             {/* Your Dashboard component */}
             <div className="userAdminPanel">
                 <div className="header">
@@ -150,9 +170,8 @@ const UsersAdmin = () => {
                                 <p>company: {job.company}</p>
                                 <p>DeadLine: {job.application_deadline}</p>
                                 <p>Salary: {`₹ ${job.salary_min} - ₹${job.salary_max}`}</p>
-                                {/* Display other job details */}
                                 <button onClick={() => deleteJob(job.id)}>Delete</button>
-                                <button onClick={() => updateJob(job.id)}>Update</button>
+                                <button onClick={() => { updateJob(job.id); setOpenModel(true); setId(job.id) }}>Update</button>
                             </li>
                         ))}
                     </ul>
