@@ -1,0 +1,116 @@
+/*=============================
+Verify
+================================
+*/
+.waitingContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.waitingContainer .waitingHeadCont {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+.waitingContainer .waitingHeadCont .waitingWrapper {
+    width: 384px;
+    height: 537px;
+    top: 216px;
+    left: 336px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.waitingContainer .waitingHeadCont .loaderCont {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.waitingContainer .waitingHeadCont .loaderCont p {
+    color: #008A3B;
+    font-weight: 600;
+}
+
+.waitingContainer .waitingHeadCont .orCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.waitingContainer .waitingHeadCont .orCont p {
+    color: #918d8d;
+    margin: 0px 10px;
+}
+
+.waitingContainer .waitingHeadCont .orCont div {
+    border-top: 1px solid #D4D4D4;
+    width: 48%;
+}
+
+.waitingContainer .waitingHeadCont .loginBtn {
+    width: 100%;
+}
+
+.waitingContainer .waitingHeadCont .orContBtnWrapper {
+    width: 100%;
+}
+
+.waitingContainer .waitingHeadCont .waitingImgWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.waitingContainer .waitingHeadCont .loginBtn button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FFFF;
+    margin-top: 10px;
+    color: #008A3B;
+    font-weight: bold;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px 0px #00000040;
+}
+
+.waitingContainer .logo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.waitingContainer .logo div:nth-child(1) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(180deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.waitingContainer .logo div:nth-child(3) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(0deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.waitingContainer .logo img {
+    margin: 20px 0px;
+}

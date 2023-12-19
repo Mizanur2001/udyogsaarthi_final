@@ -10,6 +10,11 @@ Login System
     justify-content: space-around;
 }
 
+.Container .mainLogo img {
+    height: 40px;
+    margin: 30px 0 0 20px;
+}
+
 .Container .signinContainer .signinWrapper {
     /* border: 2px solid blue; */
     Width: 384px;
@@ -40,52 +45,10 @@ Login System
 
 .Container .signinContainer form {
     display: flex;
-    height: 300px;
+    height: 201px;
     flex-direction: column;
     justify-content: space-evenly;
 
-}
-
-.Container .signinContainer form .selectRoleCont p {
-    margin: 0;
-}
-
-.Container .signinContainer form .selectRoleCont .selectRoleHead {
-    font-weight: 600;
-}
-
-.Container .signinContainer form .selectRoleCont .selectRole {
-    /* border: 2px solid black; */
-    display: flex;
-    height: 60px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.Container .signinContainer form .selectRoleCont .selectRole .admins {
-    display: flex;
-    width: 100px;
-    height: 38px;
-    padding: 4px 8px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 6px;
-    border: 1px solid #D4D4D4;
-    background: #FFF;
-    color: #BCCAD8;
-    text-align: center;
-    font-family: 'Inter';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    cursor: pointer;
-}
-
-.Container .signinContainer form .selectRoleCont .selectRole .active {
-    background: #008A3B;
-    color: #FFF;
 }
 
 .Container .signinContainer .inutWrapper {
@@ -125,6 +88,7 @@ Login System
 
 .Container .signinContainer .forgotPassCont p {
     font-weight: 600;
+    cursor: pointer;
 }
 
 .Container .signinContainer .signinWrapper .signinBtnCont {
@@ -203,6 +167,145 @@ Login System
     margin: 20px 0px;
 }
 
+/*
+=======================================
+Signup System
+=======================================
+*/
+
+.Container .signupContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.Container .signupContainer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    ;
+    width: 384px;
+    height: 674px;
+    top: 113px;
+    left: 236px;
+}
+
+.Container .signupContainer form .heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.Container .signupContainer form .heading div {
+    display: flex;
+    align-items: center;
+}
+
+.Container .signupContainer form .heading p {
+    margin: 0px;
+    color: #008A3B;
+    font-weight: 600;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.Container .signupContainer form .heading h1 {
+    margin-bottom: 5px;
+}
+
+.Container .signupContainer form input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #D4D4D4;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.Container .signupContainer form label {
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+
+.Container .signupContainer form .privacyPolicy .chechboxText {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+
+}
+
+.Container .signupContainer form .privacyPolicy .chechboxText p {
+    font-weight: 400;
+}
+
+
+.Container .signupContainer form .privacyPolicy .chechboxText a {
+    color: #008A3B;
+    margin-left: 3px;
+    text-decoration: none;
+}
+
+.Container .signupContainer form .privacyPolicy {
+    display: flex;
+}
+
+.Container .signupBtnCont button {
+    width: 384px;
+    height: 48px;
+    top: 626px;
+    padding: 16px 0px 15px;
+    border-radius: 6px;
+    background-color: #008A3B;
+    color: #FFFF;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.Container .signupContainer .logo {
+    height: 100vh;
+}
+
+.Container .signupContainer .logo img {
+    margin: 10px 0px;
+}
+
+.Container .signupContainer .logo div:nth-child(1) {
+    height: 46%;
+    width: 2px;
+    background: linear-gradient(180deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.Container .signupContainer .logo div:nth-child(3) {
+    height: 43%;
+    width: 2px;
+    background: linear-gradient(0deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.Container .signupBtnCont .disable {
+    background: gainsboro;
+    cursor: not-allowed;
+}
+
 .showPass {
     height: 25px;
     width: 25px;
@@ -210,4 +313,56 @@ Login System
     top: -32px;
     right: -350px;
     cursor: pointer;
+}
+
+/*
+================================================
+Mobile Responsive
+================================================
+*/
+
+@media(max-width:850px) {
+    .Container .signupContainer .logo {
+        display: none;
+    }
+
+    .Container .signinContainer .logo {
+        display: none;
+    }
+}
+
+@media(min-width:850px) {
+    .Container .mainLogo {
+        display: none;
+    }
+}
+
+@media(max-width:412px) {
+    .Container .signinContainer .signinWrapper {
+        Width: 330px;
+    }
+
+    .Container .signinContainer .signinWrapper .orContinueWithCont div {
+        width: 28%;
+    }
+
+    .Container .signupContainer form {
+        width: 312px;
+    }
+
+    .Container .signupBtnCont button {
+        width: 312px;
+    }
+
+    .Container .signinContainer {
+        height: 85vh;
+    }
+
+    .Container .signupContainer {
+        height: 85vh;
+    }
+
+    .showPass {
+        right: -285px;
+    }
 }

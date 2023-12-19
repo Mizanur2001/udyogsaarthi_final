@@ -19,7 +19,7 @@ app.use('/image', express.static('image'));
 
 //Calling .env file value
 const PORT = process.env.PORT;
-const URL = process.env.MONGODB_URL;
+const URL = process.env.MONGODBURL;
 
 
 //Connection with MongoDB

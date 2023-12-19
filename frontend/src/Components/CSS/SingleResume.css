@@ -1,0 +1,316 @@
+.SingleResumeCont {
+    border: 2px solid #FFF;
+}
+
+.SingleResumeCont .logo {
+    padding: 18px 0px 15px 18px;
+}
+
+.SingleResumeCont .logo img{
+    width: 120px;
+}
+
+.SingleResumeCont .backCont {
+    background: #F5F7FA;
+    display: flex;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.SingleResumeCont .backCont p {
+    padding-left: 10px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.SingleResumeCont .singleResumeWrapper {
+    background: #F5F7FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 84vh;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo {
+    border-radius: 35px;
+    background: #FFF;
+    width: 394px;
+    height: 514px;
+    flex-shrink: 0;
+    margin-right: 50px;
+    padding-left: 20px;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    padding: 40px 30px;
+    object-fit: cover;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo p {
+    margin: 0;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .info p:nth-child(1) {
+    color: #272727;
+    font-family: 'Nunito' 'Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .info p:nth-child(2) {
+    color: #272727;
+    font-family: 'Nunito' 'Sans';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-bottom: 25px;
+}
+
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(1) {
+    color: #272727;
+    font-family: 'Nunito' 'Sans';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(1) a,
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(2) a {
+    text-decoration: none;
+    color: #272727;
+}
+
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(2) {
+    color: #272727;
+    font-family: 'Nunito' 'Sans';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(1) img{
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    margin-left: 10px;
+}
+
+
+.SingleResumeCont .singleResumeWrapper .longInfo {
+    width: 778px;
+    height: 514px;
+    flex-shrink: 0;
+    border-radius: 35px;
+    background: #FFF;
+}
+
+
+.SingleResumeCont .singleResumeWrapper .longInfo h3 {
+    color: #272727;
+    font-family: 'Nunito' 'Sans';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-left: 40px;
+}
+
+.SingleResumeCont .singleResumeWrapper .longInfo p {
+    padding-left: 40px;
+    font-family: 'Nunito' 'Sans';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-left: 40px;
+    margin: 5px 0px;
+}
+
+
+/*====================================
+Mobile Version
+======================================*/
+
+@media(max-width:1270px) {
+    .SingleResumeCont .singleResumeWrapper .longInfo {
+        width: 500px;
+    }
+}
+
+@media(max-width:975px) {
+    .SingleResumeCont .singleResumeWrapper .shortInfo {
+        display: none;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 30px 0;
+    }
+
+    .SingleResumeCont .singleResumeWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SingleResumeCont .singleResumeWrapper {
+        height: auto;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .perInfo img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .perInfo {
+        display: flex;
+        align-items: center;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .perInfo .ParaCont {
+        padding-left: 25px;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .perInfo .ParaCont p:first-child {
+        color: #000;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .perInfo .ParaCont p:last-child {
+        color: #000;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo {
+        border-radius: 5px;
+        border: 1px solid #D4D4D4;
+        margin: 30px 0;
+    }
+
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile {
+        display: flex;
+        padding: 1px 30px;
+        align-items: center;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile img {
+        padding-right: 20px;
+    }
+
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .email {
+        display: flex;
+        padding: 10px 30px;
+        align-items: center;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo p {
+        color: #000;
+        font-family: 'Cutive' 'Mono';
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child{
+        height: 21px;
+        width: 45px;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child img{
+        height: 25px;
+        height: 25px;
+        margin-left: 10px;
+        border-radius: 50%;
+        padding: 0;
+    }
+
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .email img {
+        padding-right: 20px;
+    }
+
+
+}
+
+@media(max-width:650px) {
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:650px) {
+    .SingleResumeCont .singleResumeWrapper .longInfo {
+        width: 255px;
+        height: auto;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: 1px solid #D4D4D4;
+        background: #F5F7FA;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .longInfo h3 {
+        padding: 0px;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .longInfo p {
+        color: #272727;
+        font-family: 'Nunito' 'Sans';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-left: 5px;
+    }
+}
+
+@media(min-width:976px) {
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile {
+        display: none;
+    }
+}
+
+@media(max-width:450px) {
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo p {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:415px) {
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile {
+        padding: 1px 10px;
+    }
+
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .email {
+        padding: 1px 10px;
+    }
+}

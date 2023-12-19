@@ -1,0 +1,269 @@
+.SearchEngineWrapper .SearchEngineCont {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper {
+    width: 485px;
+    height: 500.19px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.SearchEngineWrapper .logo {
+    padding-left: 20px;
+    padding-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SearchEngineWrapper .logo .mainLogo {
+    height: 37px;
+    width: fit-content;
+}
+
+.SearchEngineWrapper .logo .logOut {
+    display: inline-flex;
+    height: 40px;
+    padding: 9.797px 20.453px 11.203px 20.016px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #ea0000;
+    color: #FFF;
+    border: 0px;
+    cursor: pointer;
+    margin-right: 20PX;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .slogan {
+    color: #394455;
+    font-family: 'Inter';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContWeb {
+    display: flex;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContWeb .iconCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 55px;
+    min-width: 48px;
+    flex-shrink: 0;
+    border-radius: 50px 9999px 9999px 0px;
+    border-top: 1px solid #008009;
+    border-right: 1px solid #008009;
+    border-bottom: 1px solid #008009;
+    background: #008009;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContWeb .iconCont img {
+    align-self: center;
+    height: 25px;
+}
+
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContWeb input {
+    display: flex;
+    width: 439px;
+    height: 35px;
+    padding: 10px 10px 10px 17px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50px 0px 0px 50px;
+    border-top: 1px solid #BEBEB9;
+    border-bottom: 1px solid #BEBEB9;
+    border-left: 1px solid #BEBEB9;
+    border-right: 1px solid #BEBEB9;
+    outline: none;
+    color: #6C6C6C;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .tagsCont {
+    display: flex;
+    display: inline-flex;
+    padding: 11px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .tagsCont .tags {
+    display: flex;
+    max-width: 85px;
+    padding: 3.5px 18.41px 5.5px 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: 1px solid #F8F9FA;
+    background: #F8F9FA;
+    cursor: pointer;
+}
+
+.SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .tagsCont .tags p {
+    color: #3C4043;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+@media(max-width:1305px) {
+    .SearchEngineWrapper .SearchEngineCont .sideImg {
+        display: none;
+    }
+}
+
+
+.SearchEngineWrapper .logo .mainLogo {
+    opacity: 0;
+}
+
+@media(min-width:1305px){
+    .inputUpLogo{
+        display: none;
+    }
+}
+
+
+@media(max-width:550px) {
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .slogan {
+        width: 380px;
+        color: #394455;
+        font-family: 'Inter';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContWeb {
+        display: none;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContMob {
+        display: flex;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContMob .iconCont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 55px;
+        min-width: 48px;
+        flex-shrink: 0;
+        border-radius: 9999px 0px 0px 9999px;
+        border: 1px solid #BEBEB9;
+        border-right: 0px;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContMob input {
+        display: flex;
+        width: 300px;
+        height: 35px;
+        padding: 10px 10px 10px 0px;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 0px 50px 50px 0px;
+        border-top: 1px solid #BEBEB9;
+        border-bottom: 1px solid #BEBEB9;
+        border-left: 1px solid #BEBEB9;
+        border-right: 1px solid #BEBEB9;
+        outline: none;
+        color: #6C6C6C;
+        font-family: 'Inter';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-left: 0px;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .tagsCont div:last-child {
+        display: none;
+    }
+
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .tagsCont p {
+        margin: 0px;
+    }
+
+    .SearchEngineWrapper .logo .logOut {
+        padding: 10px;
+    }
+}
+
+
+.SearchEngineWrapper .sideImg .logo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.SearchEngineWrapper .sideImg .logo div:nth-child(1) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(180deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.SearchEngineWrapper .sideImg .logo div:nth-child(3) {
+    height: 46%;
+    width: 1px;
+    background: linear-gradient(0deg, #F5F5F5 0%, #737373 100%);
+    margin-left: 10px;
+}
+
+.SearchEngineWrapper .sideImg .logo img {
+    padding-left: 175px;
+    margin: 20px 0px;
+}
+
+
+@media(max-width:410px) {
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .slogan {
+        padding-left: 55px;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont {
+        overflow-x: hidden;
+    }
+
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper{
+        position: relative;
+        top: -50px;
+    }
+}
+
+@media(min-width:550px) {
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper .inputContMob {
+        display: none;
+    }
+}
+
+.inputUpLogo{
+    height: 35px;
+}

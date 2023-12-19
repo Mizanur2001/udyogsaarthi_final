@@ -9,6 +9,6 @@ app.get('/*', function (req, res) {
 });
 
 app.get('/*')
-app.listen(9000, () => {
-    console.log("listen on port 9000")
+app.listen(7000, () => {
+    console.log("listen on port 7000")
 })
