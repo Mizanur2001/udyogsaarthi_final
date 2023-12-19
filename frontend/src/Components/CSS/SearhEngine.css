@@ -141,8 +141,8 @@
     opacity: 0;
 }
 
-@media(min-width:1305px){
-    .inputUpLogo{
+@media(min-width:1305px) {
+    .inputUpLogo {
         display: none;
     }
 }
@@ -239,7 +239,8 @@
 
 .SearchEngineWrapper .sideImg .logo img {
     padding-left: 175px;
-    margin: 20px 0px;
+    margin: 13px 0px;
+    width: 45%;
 }
 
 
@@ -252,7 +253,7 @@
         overflow-x: hidden;
     }
 
-    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper{
+    .SearchEngineWrapper .SearchEngineCont .SearchEngineWrapper {
         position: relative;
         top: -50px;
     }
@@ -264,6 +265,6 @@
     }
 }
 
-.inputUpLogo{
+.inputUpLogo {
     height: 35px;
 }

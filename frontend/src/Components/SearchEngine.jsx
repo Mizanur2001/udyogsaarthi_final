@@ -11,7 +11,7 @@ const SearchEngine = () => {
     const navigate = useNavigate();
     const [inputVal, setInputVal] = useState({ search: "" })
     const funcLogout = () => {
-        localStorage.removeItem('userInfo')
+        localStorage.removeItem('userToken')
         window.location.reload()
     }
 
@@ -48,7 +48,7 @@ const SearchEngine = () => {
                 <div className='hiddenDiv'></div>
                 <div className="SearchEngineWrapper">
                     <div className="slogan">
-                        <h3>Search for people anytime anywhere...</h3>
+                        <h3>Search for Jobs anytime anywhere...</h3>
                     </div>
                     <img src={logo} alt="logo" className='inputUpLogo'/>
                     <div className="inputContWeb">

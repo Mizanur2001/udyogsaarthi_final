@@ -12,12 +12,12 @@ function App() {
     <Router>
       <>
         <Routes>
-          <Route path='/' element={localStorage.getItem('userInfo') ? <Navigate to='/search' /> : <Auth />} />
-          <Route path='/forgotPass' element={localStorage.getItem('userInfo') ? <Navigate to='/search' /> : <ForgotPass />} />
-          <Route path='/verify' element={localStorage.getItem('userInfo') ? <Navigate to='/search' /> : <Verify />} />
-          <Route path='/search' element={localStorage.getItem('userInfo') ? <SearchEngine /> : <Navigate to='/' />} />
-          <Route path='/searchresults' element={localStorage.getItem('userInfo') ? <SearchResults /> : <Navigate to='/' />} />
-          <Route path='/search/resumea' element={localStorage.getItem('userInfo') ? <SingleResume /> : <Navigate to='/' />} />
+          <Route path='/' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <Auth />} />
+          <Route path='/forgotPass' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <ForgotPass />} />
+          <Route path='/verify' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <Verify />} />
+          <Route path='/search' element={localStorage.getItem('userToken') ? <SearchEngine /> : <Navigate to='/' />} />
+          <Route path='/searchresults' element={localStorage.getItem('userToken') ? <SearchResults /> : <Navigate to='/' />} />
+          <Route path='/search/resumea' element={localStorage.getItem('userToken') ? <SingleResume /> : <Navigate to='/' />} />
         </Routes>
       </>
     </Router>

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+.usePc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.usePc p {
+    color: #1B212F;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+@media(max-width:500px){
+    .usePc img{
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media(max-width:1200px) {
+    .appCont {
+        display: none;
+    }
+
+    .usePc {
+        display: flex;
+    }
+}
+
+@media(min-width:1201px) {
+    .usePc {
+        display: none;
+    }
+}
+
+#loder{
+    margin: auto;
+    width: 0;
+}
+
+#loder img{
+    height: 50px;
+}
