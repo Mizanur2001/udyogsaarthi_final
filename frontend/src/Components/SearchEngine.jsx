@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../img/logo.png'
 import search from '../img/Icons/searchWhite.svg'
 import searchInc from '../img/Icons/search.svg'
 import './CSS/SearhEngine.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import escapeRegExp from 'escape-string-regexp';
 
 const SearchEngine = () => {
     const URL = process.env.REACT_APP_BACKEND_URL
     const navigate = useNavigate();
     const [inputVal, setInputVal] = useState({ search: "" })
+    const [query, setQuery] = useState("");
     const funcLogout = () => {
         localStorage.removeItem('userToken')
         window.location.reload()
@@ -17,6 +19,7 @@ const SearchEngine = () => {
 
     const handleOnChanche = (e) => {
         setInputVal({ ...inputVal, [e.target.name]: e.target.value })
+        setQuery(e.target.value.trim());
     }
 
     const handleKeyPress = (e) => {
@@ -38,12 +41,42 @@ const SearchEngine = () => {
         })
     }
 
+    const [fetchedData, setFetchedData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+              const response = await fetch('https://1d57-125-17-180-42.ngrok-free.app/jobs');
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+      
+              const data = await response.json();
+              setFetchedData(data);
+              console.log(data);
+            } catch (error) {
+              console.error('Error fetching data:', error);
+            }
+          };
+      
+        fetchData();
+    }, []);
+
+    console.log(`Fetched data arw ${fetchedData.toString()}`)
+
+    let foundJob;
+    if(query) {
+        const match = new RegExp(escapeRegExp(query), 'i')
+        foundJob = fetchedData.filter((job) => match.test(job.title) || match.test(job.location))
+        console.log(`Found job in REGECP ${fetchedData}`)
+    }
+    console.log(`Found job ${foundJob}`);
     return (
         <div className='SearchEngineWrapper'>
-            <div className="logo">
+            {/* <div className="logo">
                 <img src={logo} alt="Logo" className='mainLogo' />
                 <button onClick={funcLogout} className='logOut'>Logout</button>
-            </div>
+            </div> */}
             <div className='SearchEngineCont'>
                 <div className='hiddenDiv'></div>
                 <div className="SearchEngineWrapper">
@@ -80,6 +113,10 @@ const SearchEngine = () => {
                             <p>Cyber Officer</p>
                         </div>
                     </div>
+                    {
+                        foundJob != null ? foundJob.map(job => <h1>{job.title}</h1>) : ""
+                        
+                    }
                     <div className='hiddenDiv'></div>
                     <div className='hiddenDiv'></div>
                 </div>

@@ -12,7 +12,8 @@ function App() {
     <Router>
       <>
         <Routes>
-          <Route path='/' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <Auth />} />
+          <Route path='/' element={<SearchEngine/>}/>
+          {/* <Route path='/' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <Auth />} /> */}
           <Route path='/forgotPass' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <ForgotPass />} />
           <Route path='/verify' element={localStorage.getItem('userToken') ? <Navigate to='/search' /> : <Verify />} />
           <Route path='/search' element={localStorage.getItem('userToken') ? <SearchEngine /> : <Navigate to='/' />} />
