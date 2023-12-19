@@ -6,6 +6,7 @@ import './CSS/SearhEngine.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import escapeRegExp from 'escape-string-regexp';
+import { Link } from 'react-router-dom'
 
 const SearchEngine = () => {
     const URL = process.env.REACT_APP_BACKEND_URL
@@ -67,7 +68,7 @@ const SearchEngine = () => {
     let foundJob;
     if(query) {
         const match = new RegExp(escapeRegExp(query), 'i')
-        foundJob = fetchedData.filter((job) => match.test(job.title) || match.test(job.location))
+        foundJob = fetchedData.filter((job) => match.test(job.title) || match.test(job.location)) // change search parameters here
         console.log(`Found job in REGECP ${fetchedData}`)
     }
     console.log(`Found job ${foundJob}`);
@@ -114,7 +115,14 @@ const SearchEngine = () => {
                         </div>
                     </div>
                     {
-                        foundJob != null ? foundJob.map(job => <h1>{job.title}</h1>) : ""
+
+                        //Create Job card here with more details, style it as job card
+                        foundJob != null ? foundJob.map(job => <div>
+                            {/* <Link to="job-description"> */}
+                            <h1>{job.title}</h1>
+                            <p>{job.description}</p>
+                            {/* </Link> */}
+                            </div>) : ""
                         
                     }
                     <div className='hiddenDiv'></div>
