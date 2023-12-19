@@ -14,7 +14,8 @@ import forgetPass from "../controller/forgetPass.js";
 
 const Web = (app) => {
     app.post('/signup', auth().signup);
-    app.post('/login', auth().login)
+    app.post('/verify', auth().verify);
+    app.post('/login', auth().login);
     app.post('/admin/useradmin/signup', jwtVerify, userAdmin().signup) //super Admin (done)
     app.post('/admin/useradmin/login', userAdmin().login)
     app.post('/admin/useradmin/login/verify', userAdmin().verify)

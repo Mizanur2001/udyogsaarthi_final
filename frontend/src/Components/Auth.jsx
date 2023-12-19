@@ -81,10 +81,10 @@ const Auth = () => {
                             <label htmlFor="phone">Phone</label>
                             <input type="number" name='phone' onChange={handleOnChanche} value={inputVal.phone} />
                         </div>
-                        <div className='flex mt-10'>
+                        {/*<div className='flex mt-10'>
                             <label htmlFor="YearOfBirth">Year Of Birth</label>
                             <input type="number" name='year' onChange={handleOnChanche} value={inputVal.year} />
-                        </div>
+                        </div>*/}
                         <div className='flex mt-10'>
                             <label htmlFor="password">Password</label>
                             <input type={showPass ? "text" : "password"} name='password' onChange={handleOnChanche} value={inputVal.password} />
@@ -139,7 +139,7 @@ const Auth = () => {
                                 <input type="checkbox" name="rmeberme" />
                                 <label htmlFor="rememberMe">Remember me</label>
                             </div>
-                            <p onClick={() => {nevigate('/forgotPass')}}>Forgot Password?</p>
+                            <p onClick={() => { nevigate('/forgotPass') }}>Forgot Password?</p>
                         </div>
                         <div className='signinBtnCont'>
                             <button onClick={funcLogin}>Login</button>
