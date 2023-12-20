@@ -6,7 +6,7 @@
     padding: 18px 0px 15px 18px;
 }
 
-.SingleResumeCont .logo img{
+.SingleResumeCont .logo img {
     width: 120px;
 }
 
@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 84vh;
+    max-height: 100rem;
 }
 
 .SingleResumeCont .singleResumeWrapper .shortInfo {
@@ -104,7 +104,7 @@
 }
 
 
-.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(1) img{
+.SingleResumeCont .singleResumeWrapper .shortInfo .contactInfo p:nth-child(1) img {
     height: 25px;
     width: 25px;
     padding: 0;
@@ -114,10 +114,11 @@
 
 .SingleResumeCont .singleResumeWrapper .longInfo {
     width: 778px;
-    height: 514px;
+    max-height: 514rem;
     flex-shrink: 0;
     border-radius: 35px;
     background: #FFF;
+    margin-bottom: 30px;
 }
 
 
@@ -241,12 +242,12 @@ Mobile Version
         line-height: normal;
     }
 
-    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child{
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child {
         height: 21px;
         width: 45px;
     }
 
-    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child img{
+    .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .Mobile a:last-child img {
         height: 25px;
         height: 25px;
         margin-left: 10px;
@@ -313,4 +314,9 @@ Mobile Version
     .SingleResumeCont .singleResumeWrapper .shortInfoMobile .contactInfo .email {
         padding: 1px 10px;
     }
+}
+
+.fullInfoDev p {
+    font-size: 17px !important;
+    padding: 15px 0;
 }

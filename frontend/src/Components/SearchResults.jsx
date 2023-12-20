@@ -4,7 +4,7 @@ import logo from '../img/logo.png'
 import back from '../img/Icons/back.svg'
 import Cross from '../img/Icons/Cross.svg'
 import filter from '../img/Icons/filter.svg'
-import defaultUser from '../img/DefaultUser.png'
+// import defaultUser from '../img/DefaultUser.png'
 import notFound from '../img/notFound.png'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -13,6 +13,13 @@ const SearchResults = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const searchData = location.state?.searchData;
+
+    const truncateDescription = (description) => {
+        const words = description.split(' ');
+        const truncatedDescription = words.slice(0, 20).join(' ');
+        return truncatedDescription;
+    };
+
     return (
         <div className='searchResultsConst'>
             <div className="logo">
@@ -39,11 +46,15 @@ const SearchResults = () => {
                     searchData.map((data) => {
                         return (
                             <div className="result" key={data._id} >
-                                <img src={data.imageurl === undefined ? defaultUser : process.env.REACT_APP_PUBLIC_IMG_FOLDER + data.imageurl} alt="ProfileImg" />
+                                {/* <img src={data.imageurl === undefined ? defaultUser : process.env.REACT_APP_PUBLIC_IMG_FOLDER + data.imageurl} alt="ProfileImg" /> */}
                                 <div className="info">
-                                    <p>{data.name}</p>
-                                    <p>{data.profession}</p>
-                                    <p>{data.email}</p>
+                                    <p><b>Title:</b>{data.title}</p>
+                                    <p><b>Description:</b>{truncateDescription(data.description)}....</p>
+                                    <p><b>Company:</b>{data.company}</p>
+                                    <p><b>Deadline:</b>{data.application_deadline}</p>
+                                    <p><b>Location:</b>{data.location}</p>
+                                    <p><b>Salary:</b>{`₹${data.salary_min} - ₹${data.salary_max}`}</p>
+                                    <p><b>Posed At:</b>{data.posted_at}</p>
                                     <button onClick={() => { navigate('/search/resumea', { state: { Data: data } }) }}>Show More</button>
                                 </div>
                             </div>

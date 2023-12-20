@@ -26,13 +26,8 @@ const SearchEngine = () => {
     };
 
     const funcSearch = () => {
-        axios.post(`${URL}/users/search/quary`, inputVal, {
-            headers: {
-                authToken: localStorage.getItem('userInfo')
-            }
-        }).then((response) => {
+        axios.get(`${URL}/jobs/?search=${inputVal.search}`).then((response) => {
             navigate('/searchresults', { state: { searchData: response.data } });
-
         }).catch(err => {
             console.log(err.response.data)
         })
@@ -50,7 +45,7 @@ const SearchEngine = () => {
                     <div className="slogan">
                         <h3>Search for Jobs anytime anywhere...</h3>
                     </div>
-                    <img src={logo} alt="logo" className='inputUpLogo'/>
+                    <img src={logo} alt="logo" className='inputUpLogo' />
                     <div className="inputContWeb">
                         <input type="text" placeholder='Search the web...' name='search' onChange={handleOnChanche} value={inputVal.search} onKeyPress={handleKeyPress} />
                         <div className="iconCont" onClick={funcSearch}>
