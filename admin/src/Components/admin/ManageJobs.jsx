@@ -157,21 +157,23 @@ const UsersAdmin = () => {
                             onChange={handleInputChange}
                             className="formInput"
                         />
-                        <button type="submit" className="submitButton">Create Job</button>
+                        <div className="CreateJobBtn">
+                            <button type="submit" className="submitButton">Create Job</button>
+                        </div>
                     </form>
 
                     {/* Display list of jobs */}
-                    <ul>
+                    <ul className="jobList">
                         {jobs.map((job) => (
-                            <li key={job.id}>
-                                <p>Title: {job.title}</p>
-                                <p>desc: {job.description}</p>
-                                <p>Location: {job.location}</p>
-                                <p>company: {job.company}</p>
-                                <p>DeadLine: {job.application_deadline}</p>
-                                <p>Salary: {`₹ ${job.salary_min} - ₹${job.salary_max}`}</p>
-                                <button onClick={() => deleteJob(job.id)}>Delete</button>
-                                <button onClick={() => { updateJob(job.id); setOpenModel(true); setId(job.id) }}>Update</button>
+                            <li key={job.id} className="jobItem">
+                                <p><b>Title:</b> {job.title}</p>
+                                <p><b>Description:</b> {job.description}</p>
+                                <p><b>Location:</b> {job.location}</p>
+                                <p><b>Company:</b> {job.company}</p>
+                                <p><b>Deadline:</b> {job.application_deadline}</p>
+                                <p><b>Salary:</b> ₹ {job.salary_min} - ₹{job.salary_max}</p>
+                                <button onClick={() => deleteJob(job.id)} className="deleteButton">Delete</button>
+                                <button onClick={() => { updateJob(job.id); setOpenModel(true); setId(job.id) }} className="updateButton">Update</button>
                             </li>
                         ))}
                     </ul>
