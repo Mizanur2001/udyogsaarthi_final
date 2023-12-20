@@ -4,6 +4,7 @@ import '../CSS/admin/UsersAdmin.css'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import EditTtorial from '../Models/EditTutorial';
 const ManageTutorial = () => {
 
     const BaseURL = process.env.REACT_APP_BACKEND_URL
@@ -13,36 +14,39 @@ const ManageTutorial = () => {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
-        location: '',
-        company: '',
-        salary_min: '',
-        salary_max: '',
-        application_deadline: ''
+        duration: '',
+        skills_taught: [],
     });
 
+    function stringToArray(inputString) {
+        const resultArray = inputString.split(',');
+
+        return resultArray;
+    }
 
 
-    const fetchJobs = async () => {
-        axios.get(`${BaseURL}/jobs`).then((response) => {
+
+    const fetchTutorial = async () => {
+        axios.get(`${BaseURL}/courses`).then((response) => {
+            console.log(response.data)
             setJobs(response.data)
         }).catch(err => {
             console.log(err)
         })
     };
 
+
     const createJob = async () => {
-        axios.post(`${BaseURL}/jobs/`, formData).then((response) => {
+        axios.post(`${BaseURL}/courses/`, formData).then((response) => {
             setFormData({
                 title: '',
                 description: '',
-                location: '',
+                duration: '',
                 company: '',
-                salary_min: "",
-                salary_max: "",
-                application_deadline: ''
+                skills_taught: []
             });
-            toast.success("Job Added Successfully")
-            fetchJobs();
+            toast.success("Tutorials Added Successfully")
+            fetchTutorial();
         }).catch(err => {
             if (err.response && err.response.data) {
                 const errorData = err.response.data;
@@ -59,9 +63,9 @@ const ManageTutorial = () => {
     };
 
     const deleteJob = async (jobId) => {
-        axios.delete(`${BaseURL}/jobs/${jobId}`).then((response) => {
+        axios.delete(`${BaseURL}/courses/${jobId}`).then((response) => {
             toast.success('Deleted Successfully')
-            fetchJobs();
+            fetchTutorial();
         }).catch(err => {
             console.log(err)
         })
@@ -73,14 +77,22 @@ const ManageTutorial = () => {
     };
 
     useEffect(() => {
-        fetchJobs();
+        fetchTutorial();
+        // eslint-disable-next-line
     }, []);
 
     const handleInputChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        if (e.target.name === 'skills_taught') {
+            setFormData({
+                ...formData,
+                [e.target.name]: stringToArray(e.target.value)
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [e.target.name]: e.target.value
+            });
+        }
     };
 
     const handleSubmit = (e) => {
@@ -92,9 +104,10 @@ const ManageTutorial = () => {
         <div className='UsersAdmin'>
             <ToastContainer />
             <DashBord />
+            <EditTtorial openModel={openModel} setOpenModel={setOpenModel} id={id} fetchTutorial={fetchTutorial} />
             <div className="userAdminPanel">
                 <div className="header">
-                    <p>Admin Profile</p>
+                    <p>Tutorial Manage</p>
                 </div>
                 <div className="body">
                     <form className="jobForm" onSubmit={handleSubmit}>
@@ -107,7 +120,7 @@ const ManageTutorial = () => {
                             className="formInput"
                         />
                         <textarea
-                            placeholder="Description"
+                            placeholder="description"
                             name="description"
                             value={formData.description}
                             onChange={handleInputChange}
@@ -115,46 +128,22 @@ const ManageTutorial = () => {
                         ></textarea>
                         <input
                             type="text"
-                            placeholder="Location"
-                            name="location"
-                            value={formData.location}
+                            placeholder="Duration"
+                            name="duration"
+                            value={formData.duration}
                             onChange={handleInputChange}
                             className="formInput"
                         />
                         <input
                             type="text"
-                            placeholder="Company"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="formInput"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Application Deadline (YYYY-MM-DD)"
-                            name="application_deadline"
-                            value={formData.application_deadline}
-                            onChange={handleInputChange}
-                            className="formInput"
-                        />
-                        <input
-                            type="number"
-                            placeholder="Minimum Salary"
-                            name="salary_min"
-                            value={formData.salary_min}
-                            onChange={handleInputChange}
-                            className="formInput"
-                        />
-                        <input
-                            type="number"
-                            placeholder="Maximum Salary"
-                            name="salary_max"
-                            value={formData.salary_max}
+                            placeholder="skills_taught"
+                            name="skills_taught"
+                            value={formData.skills_taught}
                             onChange={handleInputChange}
                             className="formInput"
                         />
                         <div className="CreateJobBtn">
-                            <button type="submit" className="submitButton">Create Job</button>
+                            <button type="submit" className="submitButton">Post Tutorials</button>
                         </div>
                     </form>
 
@@ -164,10 +153,8 @@ const ManageTutorial = () => {
                             <li key={job.id} className="jobItem">
                                 <p><b>Title:</b> {job.title}</p>
                                 <p><b>Description:</b> {job.description}</p>
-                                <p><b>Location:</b> {job.location}</p>
-                                <p><b>Company:</b> {job.company}</p>
-                                <p><b>Deadline:</b> {job.application_deadline}</p>
-                                <p><b>Salary:</b> ₹ {job.salary_min} - ₹{job.salary_max}</p>
+                                <p><b>duration:</b> {job.duration}</p>
+                                <p><b>skills_taught:</b> {job.skills_taught}</p>
                                 <button onClick={() => deleteJob(job.id)} className="deleteButton">Delete</button>
                                 <button onClick={() => { updateJob(job.id); setOpenModel(true); setId(job.id) }} className="updateButton">Update</button>
                             </li>
