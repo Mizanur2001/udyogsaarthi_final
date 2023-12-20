@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 const Edit = ({ openModel, setOpenModel, id, fetchJobs }) => {
-    const URL = 'https://f087-125-17-180-42.ngrok-free.app'
+    const URL = process.env.REACT_APP_BACKEND_URL
     const theme = useMantineTheme();
     const [inputVal, setInputVal] = useState({
         title: '',
@@ -33,6 +33,7 @@ const Edit = ({ openModel, setOpenModel, id, fetchJobs }) => {
         }).catch(err => {
             console.log(err)
         })
+        // eslint-disable-next-line
     }, [id])
 
 

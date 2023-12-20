@@ -48,7 +48,7 @@ const DashBord = () => {
                         <Link to='/admin/useradmin'>
                             <div className={`iconCont ${location.pathname === '/admin/useradmin' ? 'active' : ''}`}>
                                 <img src={location.pathname === '/admin/useradmin' ? activeAdmin : admin} alt="Admin" />
-                                <p>Profile</p>
+                                <p>Manage Tutorials</p>
                             </div>
                         </Link>
                     }

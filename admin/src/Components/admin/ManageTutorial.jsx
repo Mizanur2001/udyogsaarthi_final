@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import DashBord from './DashBord';
+import React, { useState, useEffect } from 'react'
+import DashBord from './DashBord'
+import '../CSS/admin/UsersAdmin.css'
 import axios from 'axios'
-import '../CSS/style.css'
-import EditModal from '../Models/Edit'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const ManageTutorial = () => {
 
-const UsersAdmin = () => {
     const BaseURL = process.env.REACT_APP_BACKEND_URL
     const [jobs, setJobs] = useState([]);
     const [openModel, setOpenModel] = useState(false)
@@ -75,7 +74,6 @@ const UsersAdmin = () => {
 
     useEffect(() => {
         fetchJobs();
-        // eslint-disable-next-line
     }, []);
 
     const handleInputChange = (e) => {
@@ -94,14 +92,11 @@ const UsersAdmin = () => {
         <div className='UsersAdmin'>
             <ToastContainer />
             <DashBord />
-            <EditModal setOpenModel={setOpenModel} openModel={openModel} id={id} fetchJobs={fetchJobs} />
-            {/* Your Dashboard component */}
             <div className="userAdminPanel">
                 <div className="header">
-                    <p>Manage Jobs</p>
+                    <p>Admin Profile</p>
                 </div>
                 <div className="body">
-                    {/* Job creation form */}
                     <form className="jobForm" onSubmit={handleSubmit}>
                         <input
                             type="text"
@@ -181,7 +176,7 @@ const UsersAdmin = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default UsersAdmin;
+export default ManageTutorial
